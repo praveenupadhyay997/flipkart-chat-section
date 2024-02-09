@@ -12,7 +12,11 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container grid grid-cols-2">
+    <div
+      className={
+        "home-container grid " + (!livechat ? " grid-cols-1" : " grid-cols-2")
+      }
+    >
       {livechat ? (
         <>
           <ChatList chatlinker={livechatlinker} />

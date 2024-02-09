@@ -3,7 +3,7 @@ import ChatPill from "./ChatPill";
 
 const ChatList = ({ chatlinker }) => {
   const [filterText, setFilterText] = useState("");
-  const [messageData, setMessageData] = useState([]); // Initialize as an empty array
+  const [messageData, setMessageData] = useState([]);
   useEffect(() => {
     async function getMessage() {
       try {
@@ -27,10 +27,13 @@ const ChatList = ({ chatlinker }) => {
   };
 
   return (
-    <div className="chat-list-container">
-      <div className="chat-title">
-        <h1 className="title-text">Filter by Title / Order Id</h1>
+    <div className="chat-list-container bg-gray-100">
+      <div className="chat-title p-2 w-[100%] bg-slate-400">
+        <h1 className="title-text text-xl font-bold">
+          Filter by Title / Order Id
+        </h1>
         <input
+          className="w-[100%]"
           type="text"
           placeholder="Start typing to search"
           onChange={(e) => {
