@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import ChatList from "./ChatList";
 import LiveChat from "./LiveChat";
 
 const Home = () => {
   const [livechat, setLiveChat] = useState(false);
-  let messageObj = {};
+  let messageObj = useRef({});
 
   const livechatlinker = (messageObject) => {
     setLiveChat(true);
-    messageObj = messageObject;
+    messageObj.current = messageObject;
   };
 
   return (
@@ -20,7 +20,7 @@ const Home = () => {
       {livechat ? (
         <>
           <ChatList chatlinker={livechatlinker} />
-          <LiveChat messageObj={messageObj} />
+          <LiveChat messageObj={messageObj.current} />
         </>
       ) : (
         <>
