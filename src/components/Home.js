@@ -4,17 +4,19 @@ import LiveChat from "./LiveChat";
 
 const Home = () => {
   const [livechat, setLiveChat] = useState(false);
+  let messageObj = {};
 
-  const livechatlinker = () => {
+  const livechatlinker = (messageObject) => {
     setLiveChat(true);
+    messageObj = messageObject;
   };
 
   return (
-    <div className="home-container">
+    <div className="home-container grid grid-cols-2">
       {livechat ? (
         <>
           <ChatList chatlinker={livechatlinker} />
-          <LiveChat />
+          <LiveChat messageObj={messageObj} />
         </>
       ) : (
         <>

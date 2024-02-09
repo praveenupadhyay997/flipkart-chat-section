@@ -1,7 +1,7 @@
 import React from "react";
 
-const LiveChat = () => {
-  return <div>LiveChat</div>;
+const LiveChat = ({ messageObj }) => {
+  return <div className="col-auto">LiveChat</div>;
 };
 
 export default LiveChat;
