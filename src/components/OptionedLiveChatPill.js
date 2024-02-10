@@ -1,6 +1,6 @@
 import React from "react";
 
-const OptionedLiveChatPill = () => {
+const OptionedLiveChatPill = ({ optionedMessage }) => {
   return <div>OptionedLiveChatPill</div>;
 };
 
